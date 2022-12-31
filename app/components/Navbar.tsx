@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-100">
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center p-5 border-b border-gray-300">
           <Link to="/">LOGO</Link>
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
