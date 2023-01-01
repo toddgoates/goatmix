@@ -10,7 +10,14 @@ export default function Navbar() {
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
       <div className="container mx-auto">
         <div className="flex justify-between items-center p-5 border-b border-gray-300">
-          <Link to="/">LOGO</Link>
+          <Link to="/" className="flex gap-4 items-center">
+            <img
+              src="images/goat-logo.svg"
+              className="w-14 h-14"
+              alt="A stylistic goat logo"
+            />
+            <h1 className="text-4xl font-bold text-gray-600">Todd Goates</h1>
+          </Link>
           <ul className="text-lg text-gray-600 hidden md:visible md:flex md:gap-8">
             <li className="py-3">
               <Link to="/" className="font-semibold hover:text-purple-500">

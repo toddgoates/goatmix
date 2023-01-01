@@ -32,7 +32,7 @@ function Document({
   return (
     <html lang="en" className="h-full bg-gray-100">
       <head>
-        <meta charSet="utf-8" />
+        <Meta />
         <title>{title}</title>
         <Links />
       </head>
