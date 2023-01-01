@@ -11,13 +11,45 @@ export default function Navbar() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center p-5 border-b border-gray-300">
           <Link to="/">LOGO</Link>
-          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <ul className="text-lg text-gray-600 hidden md:visible md:flex md:gap-8">
+            <li className="py-3">
+              <Link to="/" className="font-semibold hover:text-purple-500">
+                Home
+              </Link>
+            </li>
+            <li className="py-3">
+              <Link to="/about" className="font-semibold hover:text-purple-500">
+                About
+              </Link>
+            </li>
+            <li className="py-3">
+              <Link
+                to="/projects"
+                className="font-semibold hover:text-purple-500"
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="py-3">
+              <Link
+                to="/contact"
+                className="font-semibold hover:text-purple-500"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden"
+            aria-label="Toggle menu"
+          >
             <MenuIcon className="text-xl" />
           </button>
         </div>
         <div
           className={`bg-gray-200 p-5 border-b border-gray-300 ${
-            isOpen ? "block" : "hidden"
+            isOpen ? "block md:hidden" : "hidden"
           }`}
         >
           <ul className="text-lg text-gray-600">
