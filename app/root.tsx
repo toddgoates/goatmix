@@ -10,6 +10,7 @@ import {
   useCatch,
 } from "@remix-run/react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => ({
@@ -36,9 +37,12 @@ function Document({
         <title>{title}</title>
         <Links />
       </head>
-      <body>
-        <Navbar />
-        <main>{children}</main>
+      <body className="h-full">
+        <div className="h-full flex flex-col justify-between">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
