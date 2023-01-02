@@ -51,7 +51,7 @@ export default function Navbar() {
             className="md:hidden"
             aria-label="Toggle menu"
           >
-            <MenuIcon className="text-xl" />
+            <MenuIcon className="text-2xl" />
           </button>
         </div>
         <div
