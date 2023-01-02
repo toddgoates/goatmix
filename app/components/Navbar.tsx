@@ -6,10 +6,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-gray-100">
+    <nav className="bg-gray-100 border-b border-gray-300">
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center p-5 border-b border-gray-300">
+      <div className="md:container md:mx-auto">
+        <div className="flex justify-between items-center p-5 ">
           <Link to="/" className="flex gap-4 items-center">
             <img
               src="images/goat-logo.svg"
