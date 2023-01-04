@@ -7,15 +7,16 @@ import {
 } from "react-icons/ai";
 import ButtonLink from "~/components/ButtonLink";
 import { getJobs } from "~/models/jobs.server";
+import { getSkills } from "~/models/skills.server";
 
 export const loader = async () => {
-  return json({ jobs: await getJobs() });
+  return json({ jobs: await getJobs(), skills: await getSkills() });
 };
 
 export default function About() {
   const audioRef = useRef();
 
-  const { jobs } = useLoaderData();
+  const { jobs, skills } = useLoaderData();
 
   function playGoatSound() {
     audioRef.current.play();
@@ -58,7 +59,14 @@ export default function About() {
         </div>
 
         <div>
-          <h3 className="mb-6 text-3xl text-center">Skills</h3>
+          <h3 className="mb-6 text-3xl text-center">I like using</h3>
+          <ul>
+            {skills.map((skill) => (
+              <li className="ml-8 list-disc" key={skill.text}>
+                {skill.text}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <h3 className="mb-6 text-3xl text-center">Work Experience</h3>

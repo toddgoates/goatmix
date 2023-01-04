@@ -40,7 +40,7 @@ function Document({
       <body className="h-full">
         <div className="flex flex-col justify-between h-full">
           <Navbar />
-          <main className="grow">{children}</main>
+          <main className="md:container md:mx-auto grow">{children}</main>
           <Footer />
         </div>
         <ScrollRestoration />
