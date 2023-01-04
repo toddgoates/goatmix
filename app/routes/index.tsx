@@ -1,5 +1,5 @@
-import { Link } from "@remix-run/react";
 import Typist from "react-typist-component";
+import ButtonLink from "~/components/ButtonLink";
 
 export default function Index() {
   const words = [
@@ -51,15 +51,7 @@ export default function Index() {
           </span>
         </h3>
         <p className="text-lg">I love to build cool stuff with code</p>
-        <div>
-          <Link
-            to="/about"
-            className="px-3 py-2 text-lg font-semibold text-white bg-orange-500 rounded-lg hover:bg-orange-600"
-            prefetch="intent"
-          >
-            Learn More
-          </Link>
-        </div>
+        <ButtonLink to="/about" text="Learn More" />
       </div>
     </section>
   );
