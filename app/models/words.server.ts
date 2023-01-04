@@ -1,9 +1,9 @@
-type Words = {
+type Word = {
   id: string;
   description: string;
 };
 
-export async function getWords(): Promise<Array<Words>> {
+export async function getWords(): Promise<Array<Word>> {
   return [
     {
       id: "webdev",

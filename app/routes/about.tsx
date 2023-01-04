@@ -1,47 +1,21 @@
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { useRef } from "react";
 import {
   AiOutlinePlayCircle as PlayIcon,
   AiOutlineLink as LinkIcon,
 } from "react-icons/ai";
 import ButtonLink from "~/components/ButtonLink";
+import { getJobs } from "~/models/jobs.server";
+
+export const loader = async () => {
+  return json({ jobs: await getJobs() });
+};
 
 export default function About() {
   const audioRef = useRef();
 
-  const jobs = [
-    {
-      id: 1,
-      company: "Strumn",
-      title: "Chief Technology Officer",
-      years: "January 2021 - Now",
-      logo: "strumn-logo.svg",
-      website: "https://strumn.com",
-    },
-    {
-      id: 2,
-      company: "Q90 Corporation",
-      title: "VP of Development",
-      years: "December 2019 - Now",
-      logo: "q90-logo.svg",
-      website: "https://www.q90.com",
-    },
-    {
-      id: 3,
-      company: "Q90 Corporation",
-      title: "Software Engineer",
-      years: "May 2014 - December 2019",
-      logo: "q90-logo.svg",
-      website: "https://www.q90.com",
-    },
-    {
-      id: 4,
-      company: "A Child's Hope Foundation",
-      title: "Web Developer Volunteer",
-      years: "2013",
-      logo: "achf-logo.png",
-      website: "https://achildshopefoundation.org",
-    },
-  ];
+  const { jobs } = useLoaderData();
 
   function playGoatSound() {
     audioRef.current.play();
