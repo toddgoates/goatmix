@@ -6,11 +6,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-gray-100 border-b border-gray-300">
+    <nav className="bg-white border-b border-gray-300">
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
       <div className="md:container md:mx-auto">
-        <div className="flex justify-between items-center p-5 ">
-          <Link to="/" className="flex gap-4 items-center">
+        <div className="flex items-center justify-between p-5 ">
+          <Link to="/" className="flex items-center gap-4">
             <img
               src="images/goat-logo.svg"
               className="w-14 h-14"
@@ -18,7 +18,7 @@ export default function Navbar() {
             />
             <h1 className="text-4xl font-bold text-gray-600">Todd Goates</h1>
           </Link>
-          <ul className="text-lg text-gray-600 hidden md:visible md:flex md:gap-8">
+          <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8">
             <li className="py-3">
               <Link to="/" className="font-semibold hover:text-purple-500">
                 Home

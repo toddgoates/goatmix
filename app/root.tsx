@@ -38,9 +38,9 @@ function Document({
         <Links />
       </head>
       <body className="h-full">
-        <div className="h-full flex flex-col justify-between">
+        <div className="flex flex-col justify-between h-full">
           <Navbar />
-          <main>{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </div>
         <ScrollRestoration />
@@ -57,7 +57,7 @@ export function CatchBoundary() {
   if (caught.status === 404) {
     return (
       <Document title={`${caught.status} ${caught.statusText}`}>
-        <div className="p-5 flex flex-col gap-8">
+        <div className="flex flex-col gap-8 p-5">
           <h1 className="text-4xl font-bold">Oh No!</h1>
           <p className="text-lg">
             It looks like you tried to go to a page that doesn't exist!
@@ -80,7 +80,7 @@ export function CatchBoundary() {
 
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
-      <div className="p-5 flex flex-col gap-8">
+      <div className="flex flex-col gap-8 p-5">
         <h1 className="text-4xl font-bold">Oh No!</h1>
         <p className="text-lg">
           Something went wrong with this site. Don't worry, we're on it!
