@@ -1,23 +1,16 @@
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import Typist from "react-typist-component";
 import Jumbotron from "~/components/Jumbotron";
 import ButtonLink from "~/components/ButtonLink";
+import { getWords } from "~/models/words.server";
+
+export const loader = async () => {
+  return json({ words: await getWords() });
+};
 
 export default function Index() {
-  const words = [
-    "Web Developer",
-    "Web Master",
-    "Code Writer",
-    "Database Guru",
-    "Full-Stack Developer",
-    "Software Engineer",
-    "10X Developer",
-    "Cloud Enthusiast",
-    "Cat Whisperer",
-    "Husband and Father",
-    "Silly Goose",
-    "Programmer",
-    "Web Developer",
-  ];
+  const words = useLoaderData<typeof loader>();
 
   return (
     <Jumbotron>
@@ -30,14 +23,14 @@ export default function Index() {
             finishDelay={500}
             cursor={<span className="h-1 ml-1 bg-white">|</span>}
           >
-            {words.map((word, index) => (
-              <div key={word}>
-                <span>{word}</span>
+            {words.words.map((word, index) => (
+              <div key={word.id}>
+                <span>{word.description}</span>
                 <Typist.Delay ms={500} />
-                {index + 1 === words.length ? (
+                {index + 1 === word.description.length ? (
                   <span></span>
                 ) : (
-                  <Typist.Backspace count={word.length} />
+                  <Typist.Backspace count={word.description.length} />
                 )}
               </div>
             ))}
