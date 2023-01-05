@@ -11,6 +11,9 @@ export async function getSkills(): Promise<Array<Skill>> {
       text: "CSS",
     },
     {
+      text: "Tailwind CSS",
+    },
+    {
       text: "JavaScript",
     },
     {
@@ -18,6 +21,9 @@ export async function getSkills(): Promise<Array<Skill>> {
     },
     {
       text: "React",
+    },
+    {
+      text: "Svelte",
     },
     {
       text: "Vue",
@@ -42,6 +48,9 @@ export async function getSkills(): Promise<Array<Skill>> {
     },
     {
       text: "GitHub",
+    },
+    {
+      text: "You",
     },
   ];
 }
