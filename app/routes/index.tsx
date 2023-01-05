@@ -10,7 +10,7 @@ export const loader = async () => {
 };
 
 export default function Index() {
-  const words = useLoaderData<typeof loader>();
+  const { words } = useLoaderData<typeof loader>();
 
   return (
     <Jumbotron>
@@ -23,11 +23,11 @@ export default function Index() {
             finishDelay={500}
             cursor={<span className="h-1 ml-1 bg-white">|</span>}
           >
-            {words.words.map((word, index) => (
+            {words.map((word, index) => (
               <div key={word.id}>
                 <span>{word.description}</span>
                 <Typist.Delay ms={500} />
-                {index + 1 === word.description.length ? (
+                {index + 1 === words.length ? (
                   <span></span>
                 ) : (
                   <Typist.Backspace count={word.description.length} />
