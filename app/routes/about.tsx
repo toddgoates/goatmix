@@ -24,12 +24,14 @@ export const loader = async () => {
 };
 
 export default function About() {
-  const audioRef = useRef();
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const { jobs, skills, schooling } = useLoaderData();
 
   function playGoatSound() {
-    audioRef.current.play();
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
   }
 
   return (
