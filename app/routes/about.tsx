@@ -40,7 +40,7 @@ export default function About() {
         <Container extraSpace>
           <>
             <h2 className="mb-6 text-4xl sm:hidden">All about me</h2>
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row md:gap-8">
               <div className="mx-auto text-center">
                 <img
                   src="images/portrait.jpg"
