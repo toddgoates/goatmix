@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <Jumbotron>
       <h2 className="text-6xl">Hey, I'm Todd!</h2>
-      <h3 className="flex items-center justify-center gap-2 text-3xl">
+      <h3 className="flex items-center justify-center gap-2 text-2xl sm:text-3xl">
         <span>I'm a</span>
         <span className="p-1 font-bold text-white bg-purple-500">
           <Typist
