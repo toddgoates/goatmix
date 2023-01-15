@@ -1,4 +1,4 @@
-type Skill = {
+export type Skill = {
   text: string;
 };
 
