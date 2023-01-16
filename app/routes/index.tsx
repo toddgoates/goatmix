@@ -19,7 +19,7 @@ export default function Index() {
         <span>I'm a</span>
         <span className="p-1 font-bold text-white bg-purple-500">
           <Typist
-            typingDelay={175}
+            typingDelay={150}
             finishDelay={500}
             cursor={<span className="h-1 ml-1 bg-white">|</span>}
           >
