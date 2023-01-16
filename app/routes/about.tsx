@@ -1,10 +1,7 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useRef } from "react";
-import {
-  AiOutlinePlayCircle as PlayIcon,
-  AiOutlineLink as LinkIcon,
-} from "react-icons/ai";
+import { AiOutlinePlayCircle as PlayIcon } from "react-icons/ai";
 import ButtonLink from "~/components/ButtonLink";
 import { getJobs } from "~/models/jobs.server";
 import { getSkills } from "~/models/skills.server";
@@ -14,6 +11,8 @@ import Section from "~/components/Section";
 import type { Job } from "~/models/jobs.server";
 import type { Skill } from "~/models/skills.server";
 import type { Schooling } from "~/models/schooling.server";
+import InfoCard from "~/components/InfoCard";
+import IconLink from "~/components/IconLink";
 
 export const loader = async () => {
   return json({
@@ -51,13 +50,10 @@ export default function About() {
               <h2 className="mb-6 text-4xl hidden sm:block">All about me</h2>
               <p className="mb-6 text-lg">
                 Hey, I'm Todd Goates
-                <button
-                  className="inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700"
-                  onClick={playGoatSound}
-                >
+                <IconLink button onClick={playGoatSound}>
                   <PlayIcon />
                   How to pronounce my last name
-                </button>
+                </IconLink>
                 <audio ref={audioRef} src="audio/goat.mp3">
                   Sorry, looks like your browser doesn't support audio
                 </audio>
@@ -102,30 +98,14 @@ export default function About() {
               <h3 className="mb-8 text-3xl text-center">Places I've worked</h3>
               <ul className="mb-8">
                 {jobs.map((job: Job) => (
-                  <li
+                  <InfoCard
                     key={job.id}
-                    className="grid items-center grid-cols-4 p-5 mb-4 shadow-lg bg-gray-50"
-                  >
-                    <div className="col-span-1">
-                      <img
-                        src={`images/${job.logo}`}
-                        alt={`Logo for ${job.company}`}
-                        className="w-20"
-                      />
-                    </div>
-                    <div className="col-span-3">
-                      <h4 className="flex items-center gap-1 text-xl font-semibold">
-                        {job.company}
-                        <a href={job.website} target="_blank" rel="noreferrer">
-                          <LinkIcon />
-                        </a>
-                      </h4>
-                      <div className="flex items-center justify-between">
-                        <p>{job.title}</p>
-                        <p className="text-gray-700">{job.years}</p>
-                      </div>
-                    </div>
-                  </li>
+                    title={job.company}
+                    subtitle={job.title}
+                    image={job.logo}
+                    dates={job.years}
+                    link={job.website}
+                  />
                 ))}
               </ul>
             </div>
@@ -133,34 +113,14 @@ export default function About() {
               <h3 className="mb-8 text-3xl text-center">Education</h3>
               <ul className="mb-8">
                 {schooling.map((school: Schooling) => (
-                  <li
+                  <InfoCard
                     key={school.id}
-                    className="grid items-center grid-cols-4 p-5 mb-4 shadow-lg bg-gray-50"
-                  >
-                    <div className="col-span-1">
-                      <img
-                        src={`images/${school.logo}`}
-                        alt={`Logo for ${school.name}`}
-                        className="w-20"
-                      />
-                    </div>
-                    <div className="col-span-3">
-                      <h4 className="flex items-center gap-1 text-xl font-semibold">
-                        {school.name}
-                        <a
-                          href={school.website}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <LinkIcon />
-                        </a>
-                      </h4>
-                      <div className="flex items-center justify-between">
-                        <p>{school.degree}</p>
-                        <p className="text-gray-700">{school.years}</p>
-                      </div>
-                    </div>
-                  </li>
+                    title={school.name}
+                    subtitle={school.degree}
+                    image={school.logo}
+                    dates={school.years}
+                    link={school.website}
+                  />
                 ))}
               </ul>
             </div>
