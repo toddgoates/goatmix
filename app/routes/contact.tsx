@@ -44,7 +44,7 @@ export const action = async ({ request }: ActionArgs) => {
 export default function Projects() {
   const transition = useTransition();
   const actionData = useActionData();
-  const successfulSubmission = true; //actionData?.statusCode === 200;
+  const successfulSubmission = actionData?.statusCode === 200;
 
   return (
     <>
