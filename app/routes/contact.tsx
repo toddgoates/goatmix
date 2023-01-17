@@ -16,12 +16,52 @@ import Alert from "~/components/Alert";
 
 import type { ActionArgs } from "@remix-run/node";
 
+function validateName(name: FormDataEntryValue | string | null) {
+  if (typeof name === "string" && name.length === 0) {
+    return "Please enter your name";
+  }
+}
+
+function validateEmail(email: FormDataEntryValue | string | null) {
+  if (typeof email === "string") {
+    if (email.length === 0) {
+      return "Please enter your email";
+    }
+
+    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,13})+$/.test(email)) {
+      return "Please enter a valid email";
+    }
+  }
+
+  return;
+}
+
+function validateMessage(message: FormDataEntryValue | string | null) {
+  if (typeof message === "string" && message.length < 2) {
+    return "Please enter a message";
+  }
+}
+
 export const action = async ({ request }: ActionArgs) => {
   const form = await request.formData();
   const name = form.get("name");
   const email = form.get("email");
   const message = form.get("message");
-  const phone = "";
+  const phone = ""; // Needed for existing API
+
+  const fieldErrors = {
+    name: validateName(name),
+    email: validateEmail(email),
+    message: validateMessage(message),
+  };
+
+  const fields = { name, email, message };
+  if (Object.values(fieldErrors).some(Boolean)) {
+    return json({
+      fieldErrors,
+      fields,
+    });
+  }
 
   const body = JSON.stringify({
     name: name,
@@ -69,17 +109,31 @@ export default function Projects() {
               ) : (
                 <Form method="post">
                   <fieldset
-                    className="flex flex-col gap-8"
+                    className="flex flex-col gap-4"
                     disabled={transition.state === "submitting"}
                   >
                     <div className="flex gap-8">
                       <div className="w-full">
                         <Label htmlFor="name" text="What's your name?" />
                         <Input name="name" required />
+                        {actionData?.fieldErrors?.name ? (
+                          <p className="text-red-500">
+                            {actionData.fieldErrors.name}
+                          </p>
+                        ) : (
+                          <p>&nbsp;</p>
+                        )}
                       </div>
                       <div className="w-full">
                         <Label htmlFor="email" text="What's your email?" />
                         <Input type="email" name="email" required />
+                        {actionData?.fieldErrors?.email ? (
+                          <p className="text-red-500">
+                            {actionData.fieldErrors.email}
+                          </p>
+                        ) : (
+                          <p>&nbsp;</p>
+                        )}
                       </div>
                     </div>
                     <div>
@@ -88,6 +142,13 @@ export default function Projects() {
                         text="What would you like to say?"
                       />
                       <Textarea name="message" required></Textarea>
+                      {actionData?.fieldErrors?.message ? (
+                        <p className="text-red-500">
+                          {actionData.fieldErrors.message}
+                        </p>
+                      ) : (
+                        <p>&nbsp;</p>
+                      )}
                     </div>
                     <div className="text-left">
                       <button

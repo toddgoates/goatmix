@@ -922,9 +922,9 @@ video {
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
 
-.text-pink-500 {
+.text-red-500 {
   --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
