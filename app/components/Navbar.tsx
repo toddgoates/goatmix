@@ -1,10 +1,15 @@
-import { useState } from "react";
-import { Link } from "@remix-run/react";
+import { useState, useEffect } from "react";
+import { NavLink, Link, useTransition } from "@remix-run/react";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 import Container from "./Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const transition = useTransition();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [transition.state]);
 
   return (
     <nav className="bg-white border-b border-gray-300">
@@ -22,40 +27,56 @@ export default function Navbar() {
             </Link>
             <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8">
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/"
                   prefetch="intent"
-                  className="font-semibold hover:text-purple-500"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/about"
                   prefetch="intent"
-                  className="font-semibold hover:text-purple-500"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/projects"
                   prefetch="intent"
-                  className="font-semibold hover:text-purple-500"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   Projects
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/contact"
                   prefetch="intent"
-                  className="font-semibold hover:text-purple-500"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <button
@@ -73,33 +94,56 @@ export default function Navbar() {
           >
             <ul className="text-lg text-gray-600">
               <li className="py-3">
-                <Link to="/" className="font-semibold hover:text-purple-500">
+                <NavLink
+                  to="/"
+                  prefetch="intent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/about"
-                  className="font-semibold hover:text-purple-500"
+                  prefetch="intent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/projects"
-                  className="font-semibold hover:text-purple-500"
+                  prefetch="intent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   Projects
-                </Link>
+                </NavLink>
               </li>
               <li className="py-3">
-                <Link
+                <NavLink
                   to="/contact"
-                  className="font-semibold hover:text-purple-500"
+                  prefetch="intent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-purple-500 font-semibold"
+                      : "font-semibold hover:text-purple-500"
+                  }
                 >
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
