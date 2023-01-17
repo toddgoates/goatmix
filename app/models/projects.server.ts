@@ -14,7 +14,7 @@ export async function getProjects(): Promise<Array<Project>> {
       description:
         "This is a website I built for my father-in-law's business in Denton, Texas. The site was built with SvelteKit, Typescript, Tailwind CSS, and a serverless function for sending an email from the contact form via MailGun. I later added a payments page using Stripe. It is hosted on Vercel for fast builds and automated deployments.",
       link: "https://www.northtexasprocessserver.com",
-      image: "notxps.PNG",
+      image: "notxps.png",
       tech: [
         "SvelteKit",
         "Tailwind CSS",

@@ -1,4 +1,5 @@
 import ButtonLink from "./ButtonLink";
+import Badge from "./Badge";
 import type { Project } from "~/models/projects.server";
 
 type ProjectCardProps = {
@@ -12,11 +13,11 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div key={project.name}>
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col gap-8 md:flex-row">
         <img
           src={`images/${project.image}`}
           alt={`Screenshot of ${project.name}`}
-          className={`w-full md:w-1/2 lg:w-1/3 xl:w-1/4 ${
+          className={`w-full h-full md:w-1/2 lg:w-1/3 xl:w-1/4 ${
             reverse ? "md:order-last" : "md:order-first"
           }`}
         />
@@ -24,6 +25,11 @@ export default function ProjectCard({
           <div className="flex flex-col gap-8">
             <h3 className="text-xl font-semibold">{project.name}</h3>
             <p className="text-lg">{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t) => (
+                <Badge text={t} key={t} />
+              ))}
+            </div>
             <p className="flex gap-4">
               <ButtonLink to={project.link} text="Visit Site" external />
               {project?.repoLink ? (
