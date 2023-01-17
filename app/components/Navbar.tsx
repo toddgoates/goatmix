@@ -12,7 +12,7 @@ export default function Navbar() {
       <Container>
         <>
           <div className="flex items-center justify-between p-5 ">
-            <Link to="/" className="flex items-center gap-4">
+            <Link to="/" prefetch="intent" className="flex items-center gap-4">
               <img
                 src="images/goat-logo.svg"
                 className="w-14 h-14"
@@ -22,13 +22,18 @@ export default function Navbar() {
             </Link>
             <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8">
               <li className="py-3">
-                <Link to="/" className="font-semibold hover:text-purple-500">
+                <Link
+                  to="/"
+                  prefetch="intent"
+                  className="font-semibold hover:text-purple-500"
+                >
                   Home
                 </Link>
               </li>
               <li className="py-3">
                 <Link
                   to="/about"
+                  prefetch="intent"
                   className="font-semibold hover:text-purple-500"
                 >
                   About
@@ -37,6 +42,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   to="/projects"
+                  prefetch="intent"
                   className="font-semibold hover:text-purple-500"
                 >
                   Projects
@@ -45,6 +51,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   to="/contact"
+                  prefetch="intent"
                   className="font-semibold hover:text-purple-500"
                 >
                   Contact
