@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
-import { NavLink, Link, useTransition } from "@remix-run/react";
+import { useState } from "react";
+import { NavLink, Link } from "@remix-run/react";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 import Container from "./Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const transition = useTransition();
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [transition.state]);
 
   return (
     <nav className="bg-white border-b border-gray-300">
@@ -29,6 +24,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -42,6 +38,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/about"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -55,6 +52,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/projects"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -68,6 +66,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/contact"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -96,6 +95,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -109,6 +109,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/about"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -122,6 +123,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/projects"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
@@ -135,6 +137,7 @@ export default function Navbar() {
               <li className="py-3">
                 <NavLink
                   to="/contact"
+                  onClick={() => setIsOpen(false)}
                   prefetch="intent"
                   className={({ isActive }) =>
                     isActive
