@@ -17,6 +17,8 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Todd Goates | Utah-Based, Full-Stack Developer",
   viewport: "width=device-width,initial-scale=1",
+  description:
+    "The portfolio website of Todd Goates, a Full-Stack Web Developer from Utah",
 });
 
 export function links() {

@@ -13,9 +13,15 @@ import Section from "~/components/Section";
 import InfoCard from "~/components/InfoCard";
 import IconLink from "~/components/IconLink";
 
+import type { MetaFunction } from "@remix-run/node";
 import type { Job } from "~/models/jobs.server";
 import type { Skill } from "~/models/skills.server";
 import type { Schooling } from "~/models/schooling.server";
+
+export const meta: MetaFunction = () => ({
+  title: "Todd Goates | About",
+  description: "All about Todd Goates: Skills, Work Experience, and Education",
+});
 
 export const loader = async () => {
   return json({

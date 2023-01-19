@@ -14,7 +14,12 @@ import Section from "~/components/Section";
 import Textarea from "~/components/Textarea";
 import Alert from "~/components/Alert";
 
-import type { ActionArgs } from "@remix-run/node";
+import type { ActionArgs, MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => ({
+  title: "Todd Goates | Contact",
+  description: "Different ways to get in touch with Todd Goates",
+});
 
 function validateName(name: FormDataEntryValue | string | null) {
   if (typeof name === "string" && name.length === 0) {
