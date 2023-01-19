@@ -36,7 +36,7 @@ function Document({
     <html lang="en" className="h-full bg-gray-100">
       <head>
         <Meta />
-        <meta name="theme-color" content="##a855f7" />
+        <meta name="theme-color" content="#a855f7" />
         <title>{title}</title>
         <Links />
       </head>
