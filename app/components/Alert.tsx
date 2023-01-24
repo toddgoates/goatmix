@@ -4,15 +4,16 @@ type AlertProps = {
 };
 
 export default function Alert({ type, children }: AlertProps) {
-  let bgColor, color, borderColor;
+  const colorMap = {
+    success: "purple",
+    info: "indigo",
+    warning: "orange",
+    error: "red",
+  };
 
-  if (type === "success") {
-    bgColor = "bg-purple-200";
-    color = "text-purple-800";
-    borderColor = "border-purple-800";
-  }
-
-  // TODO: Implement other styles as needed
+  const bgColor = `bg-${colorMap[type]}-200`;
+  const color = `text-${colorMap[type]}-800`;
+  const borderColor = `border-${colorMap[type]}-800`;
 
   return (
     <div
