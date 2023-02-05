@@ -3,7 +3,7 @@ import { Link } from "@remix-run/react";
 type ButtonLinkProps = {
   containerClass?: string;
   to: string;
-  text: string;
+  children: React.ReactNode;
   buttonClass?: string;
   external?: boolean;
   outlined?: boolean;
@@ -12,10 +12,10 @@ type ButtonLinkProps = {
 export default function ButtonLink({
   containerClass = "",
   to,
-  text,
   buttonClass = "",
   external = false,
   outlined = false,
+  children,
 }: ButtonLinkProps) {
   return (
     <div className={containerClass}>
@@ -30,7 +30,7 @@ export default function ButtonLink({
           target="_blank"
           rel="noreferrer"
         >
-          {text}
+          {children}
         </a>
       ) : (
         <Link
@@ -42,7 +42,7 @@ export default function ButtonLink({
           } ${buttonClass}`}
           prefetch="intent"
         >
-          {text}
+          {children}
         </Link>
       )}
     </div>

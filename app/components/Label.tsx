@@ -1,13 +1,17 @@
 type LabelProps = {
-  text: string;
+  children: React.ReactNode;
   htmlFor: string;
   labelClass?: string;
 };
 
-export default function Label({ text, htmlFor, labelClass = "" }: LabelProps) {
+export default function Label({
+  children,
+  htmlFor,
+  labelClass = "",
+}: LabelProps) {
   return (
     <label htmlFor={htmlFor} className={`text-lg mb-1 block ${labelClass}`}>
-      {text}
+      {children}
     </label>
   );
 }

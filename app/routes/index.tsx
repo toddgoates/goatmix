@@ -38,7 +38,7 @@ export default function Index() {
         </span>
       </h3>
       <p className="text-lg">I love to build cool stuff with code</p>
-      <ButtonLink to="/about" text="Learn More" />
+      <ButtonLink to="/about">Learn More</ButtonLink>
     </Jumbotron>
   );
 }

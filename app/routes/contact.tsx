@@ -119,7 +119,7 @@ export default function Projects() {
                   >
                     <div className="flex gap-8">
                       <div className="w-full">
-                        <Label htmlFor="name" text="What's your name?" />
+                        <Label htmlFor="name">What's your name?</Label>
                         <Input name="name" required />
                         {actionData?.fieldErrors?.name ? (
                           <p className="text-red-500">
@@ -130,7 +130,7 @@ export default function Projects() {
                         )}
                       </div>
                       <div className="w-full">
-                        <Label htmlFor="email" text="What's your email?" />
+                        <Label htmlFor="email">What's your email?</Label>
                         <Input type="email" name="email" required />
                         {actionData?.fieldErrors?.email ? (
                           <p className="text-red-500">
@@ -142,10 +142,9 @@ export default function Projects() {
                       </div>
                     </div>
                     <div>
-                      <Label
-                        htmlFor="message"
-                        text="What would you like to say?"
-                      />
+                      <Label htmlFor="message">
+                        What would you like to say?
+                      </Label>
                       <Textarea name="message" required></Textarea>
                       {actionData?.fieldErrors?.message ? (
                         <p className="text-red-500">

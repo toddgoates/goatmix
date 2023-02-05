@@ -78,7 +78,7 @@ export default function About() {
                 done.
               </p>
               <div className="clear-both"></div>
-              <ButtonLink to="/projects" text="View Projects" />
+              <ButtonLink to="/projects">View Projects</ButtonLink>
             </div>
           </div>
         </>
