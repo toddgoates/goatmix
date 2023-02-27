@@ -119,7 +119,10 @@ export default function About() {
               </ul>
               <p className="flex flex-col items-center mb-8 sm:flex-row">
                 Want to learn more about my work?
-                <IconLink href="/files/TMG-2023.pdf">
+                <IconLink
+                  href="/files/TMG-2023.pdf"
+                  download="Todd-Goates-Resume"
+                >
                   <DownloadIcon />
                   Download my resume
                 </IconLink>
