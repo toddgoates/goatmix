@@ -1,35 +1,26 @@
 type IconLinkProps = {
-  link?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  as?: "a" | "button";
   children: React.ReactNode;
-  button?: boolean;
+  [x: string]: any;
 };
 
+const VALID_TAGS = ["a", "button"];
+
 export default function IconLink({
-  link,
-  onClick,
+  as: Tag = "a",
   children,
-  button = false,
+  ...props
 }: IconLinkProps) {
-  if (button) {
-    return (
-      <button
-        className="inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700"
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    );
+  if (!VALID_TAGS.includes(Tag)) {
+    throw new Error(`Unrecognized tag: ${Tag}. Expected: ${VALID_TAGS}`);
   }
 
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noreferrer"
-      className="text-lg inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700"
+    <Tag
+      className="inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700"
+      {...props}
     >
       {children}
-    </a>
+    </Tag>
   );
 }

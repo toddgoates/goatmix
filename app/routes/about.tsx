@@ -59,7 +59,7 @@ export default function About() {
               <h2 className="hidden mb-6 text-4xl sm:block">All about me</h2>
               <p className="mb-6 text-lg">
                 Hey, I'm Todd Goates
-                <IconLink button onClick={playGoatSound}>
+                <IconLink as="button" onClick={playGoatSound}>
                   <PlayIcon />
                   How to pronounce my last name
                 </IconLink>
@@ -119,7 +119,7 @@ export default function About() {
               </ul>
               <p className="flex flex-col items-center mb-8 sm:flex-row">
                 Want to learn more about my work?
-                <IconLink link="/files/TMG-2023.pdf">
+                <IconLink href="/files/TMG-2023.pdf">
                   <DownloadIcon />
                   Download my resume
                 </IconLink>

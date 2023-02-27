@@ -170,19 +170,31 @@ export default function Projects() {
             </div>
             <div className="col-span-1">
               <div className="flex flex-col gap-4 p-5 bg-white shadow-lg">
-                <IconLink link="mailto:todd@toddgoates.com">
+                <IconLink href="mailto:todd@toddgoates.com">
                   <EnvelopeIcon /> todd@toddgoates.com
                 </IconLink>
-                <IconLink link="tel:18013199420">
+                <IconLink href="tel:18013199420">
                   <PhoneIcon /> 801 319 9420
                 </IconLink>
-                <IconLink link="https://twitter.com/toddgoates">
+                <IconLink
+                  href="https://twitter.com/toddgoates"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <TwitterIcon /> Twitter
                 </IconLink>
-                <IconLink link="https://github.com/toddgoates">
+                <IconLink
+                  href="https://github.com/toddgoates"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <GithubIcon /> GitHub
                 </IconLink>
-                <IconLink link="https://www.linkedin.com/in/toddgoates">
+                <IconLink
+                  href="https://www.linkedin.com/in/toddgoates"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <LinkedinIcon /> LinkedIn
                 </IconLink>
               </div>
