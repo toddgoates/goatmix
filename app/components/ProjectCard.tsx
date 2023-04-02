@@ -37,7 +37,7 @@ export default function ProjectCard({
                 <Badge key={t}>{t}</Badge>
               ))}
             </div>
-            <p className="flex gap-4">
+            <div className="flex gap-4">
               <ButtonLink to={project.link} external>
                 Visit Site
               </ButtonLink>
@@ -46,7 +46,7 @@ export default function ProjectCard({
                   View Code
                 </ButtonLink>
               ) : null}
-            </p>
+            </div>
           </div>
         </div>
       </div>
