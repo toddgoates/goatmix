@@ -45,6 +45,10 @@ function validateMessage(message: FormDataEntryValue | string | null) {
   if (typeof message === "string" && message.length < 2) {
     return "Please enter a message";
   }
+
+  if (typeof message === "string" && (message.match(/https?:\/\//) || message.match(/http?:\/\//))) {
+    return "Sorry, I'm not accepting messages with links at this time";
+  }
 }
 
 export const action = async ({ request }: ActionArgs) => {
