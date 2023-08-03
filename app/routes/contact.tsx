@@ -46,7 +46,7 @@ function validateMessage(message: FormDataEntryValue | string | null) {
     return "Please enter a message";
   }
 
-  if (typeof message === "string" && (message.match(/https?:\/\//) || message.match(/http?:\/\//))) {
+  if (typeof message === "string" && message.match(/https?:\/\//)) {
     return "Sorry, I'm not accepting messages with links at this time";
   }
 }
