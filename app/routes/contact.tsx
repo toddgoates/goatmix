@@ -25,6 +25,10 @@ function validateName(name: FormDataEntryValue | string | null) {
   if (typeof name === "string" && name.length === 0) {
     return "Please enter your name";
   }
+
+  if (typeof name === 'string' && name.match(/https?:\/\//)) {
+    return "Sorry, I'm not accepting names with links in them at this time";
+  }
 }
 
 function validateEmail(email: FormDataEntryValue | string | null) {
