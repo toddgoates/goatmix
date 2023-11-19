@@ -105,7 +105,7 @@ export default function Projects() {
         <>
           <h2 className="mb-12 text-4xl text-center">Get in touch</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="lg:col-span-2">
+            <div className="md:col-span-2">
               <p className="mb-8 text-lg">
                 Want to collaborate together on project? Feel free to get in
                 touch by email or text or fill out the form below... or connect
@@ -125,7 +125,7 @@ export default function Projects() {
                     className="flex flex-col gap-4"
                     disabled={transition.state === "submitting"}
                   >
-                    <div className="flex gap-8">
+                    <div className="sm:flex sm:gap-8">
                       <div className="w-full">
                         <Label htmlFor="name">What's your name?</Label>
                         <Input name="name" required />
