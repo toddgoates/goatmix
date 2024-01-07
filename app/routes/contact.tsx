@@ -26,7 +26,7 @@ function validateName(name: FormDataEntryValue | string | null) {
     return "Please enter your name";
   }
 
-  if (typeof name === 'string' && name.match(/https?:\/\//)) {
+  if (typeof name === "string" && name.match(/https?:\/\//)) {
     return "Sorry, I'm not accepting names with links in them at this time";
   }
 }
@@ -60,7 +60,17 @@ export const action = async ({ request }: ActionArgs) => {
   const name = form.get("name");
   const email = form.get("email");
   const message = form.get("message");
-  const phone = ""; // Needed for existing API
+  const honeypot = form.get("phone");
+
+  if (honeypot != "") {
+    return json(
+      {
+        statusCode: 200,
+        message: "Thanks for submitting!",
+      },
+      200
+    );
+  }
 
   const fieldErrors = {
     name: validateName(name),
@@ -79,7 +89,7 @@ export const action = async ({ request }: ActionArgs) => {
   const body = JSON.stringify({
     name: name,
     email: email,
-    phone: phone,
+    phone: "", // Needed for existing API
     message: message,
   });
 
@@ -97,6 +107,7 @@ export const action = async ({ request }: ActionArgs) => {
 export default function Projects() {
   const transition = useTransition();
   const actionData = useActionData();
+  console.log(actionData);
   const successfulSubmission = actionData?.statusCode === 200;
 
   return (
@@ -148,6 +159,17 @@ export default function Projects() {
                           <p>&nbsp;</p>
                         )}
                       </div>
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="honey">
+                        What's your phone number?
+                      </label>
+                      <Input
+                        type="tel"
+                        name="phone"
+                        inputClass="honey"
+                        tabIndex="-1"
+                      />
                     </div>
                     <div>
                       <Label htmlFor="message">

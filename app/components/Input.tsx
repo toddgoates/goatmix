@@ -1,8 +1,9 @@
 type InputProps = {
-  type?: "text" | "email" | "number";
+  type?: "text" | "email" | "number" | "tel";
   name: string;
   inputClass?: string;
   required?: boolean;
+  props?: any;
 };
 
 export default function Input({
@@ -10,6 +11,7 @@ export default function Input({
   name,
   inputClass = "",
   required = false,
+  ...props
 }: InputProps) {
   return (
     <input
@@ -18,6 +20,7 @@ export default function Input({
       id={name}
       className={`w-full p-2 bg-gray-200 border border-gray-400 rounded ${inputClass}`}
       required={required}
+      {...props}
     />
   );
 }
