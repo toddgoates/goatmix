@@ -17,6 +17,9 @@ export async function getSkills(): Promise<Array<Skill>> {
       text: "JavaScript",
     },
     {
+      text: "TypeScript",
+    },
+    {
       text: "NodeJS",
     },
     {
@@ -42,6 +45,15 @@ export async function getSkills(): Promise<Array<Skill>> {
     },
     {
       text: "Docker",
+    },
+    {
+      text: "PHPUnit",
+    },
+    {
+      text: "Pest",
+    },
+    {
+      text: "Redis",
     },
     {
       text: "VS Code",
