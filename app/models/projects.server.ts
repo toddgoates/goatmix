@@ -48,6 +48,15 @@ export async function getProjects(): Promise<Array<Project>> {
       tech: ["Drupal", "Stripe", "LESS", "PHP", "jQuery"],
     },
     {
+      name: "Todd Goates for President",
+      description:
+        "This was a joke website to announce my candidacy for President of the United States that I launched on my 35th birthday. The site was built with React and Remix. I used Tailwind CSS for styling and Vercel for hosting. The site was a fun way to show off my skills and troll my friends and followers on social media.",
+      link: "https://vote4.toddgoates.com",
+      repoLink: "https://github.com/toddgoates/votes4goates",
+      image: "vote4goates.png",
+      tech: ["React", "Remix", "Tailwind CSS", "Vercel"],
+    },
+    {
       name: "Pocket Planetarium",
       description:
         "A fun project built with React to see how much you would weigh on different planets in the solar system. The application uses several small components: WeightForm, PlanetList, and Planet. The user's weight is kept in context and passed to sibling components. I'm using styled components for scoping CSS.",
