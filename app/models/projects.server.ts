@@ -10,6 +10,21 @@ export type Project = {
 export async function getProjects(): Promise<Array<Project>> {
   return [
     {
+      name: "Utah Tech Work",
+      description:
+        "This is a job board website for tech jobs in the state of Utah. This site was built with Laravel, Tailwind CSS, Livewire, and Alpine.js. It also uses Pest for automated testing and Stripe for one-time payments. The site is hosted on a DigitalOcean droplet, which I configured with Nginx, PHP-FPM, Composer, and other needed libraries.",
+      link: "https://www.utahtech.work",
+      image: "utw.png",
+      tech: [
+        "Laravel",
+        "Tailwind CSS",
+        "Livewire",
+        "Alpine.js",
+        "Pest",
+        "Stripe",
+      ],
+    },
+    {
       name: "North Texas Process Server",
       description:
         "This is a website I built for my father-in-law's business in Denton, Texas. The site was built with SvelteKit, Typescript, Tailwind CSS, and a serverless function for sending an email from the contact form via MailGun. I later added a payments page using Stripe. It is hosted on Vercel for fast builds and automated deployments.",
