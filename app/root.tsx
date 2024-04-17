@@ -49,7 +49,7 @@ function Document({
           property="og:description"
           content="The portfolio website of Todd Goates, a Full-Stack Web Developer from Utah"
         />
-        <meta property="og:image" content="images/meta-tag.png" />
+        <meta property="og:image" content="/images/meta-tag.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="toddgoates.com" />
@@ -62,7 +62,7 @@ function Document({
           name="twitter:description"
           content="The portfolio website of Todd Goates, a Full-Stack Web Developer from Utah"
         />
-        <meta name="twitter:image" content="images/meta-tag.png" />
+        <meta name="twitter:image" content="/images/meta-tag.png" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
