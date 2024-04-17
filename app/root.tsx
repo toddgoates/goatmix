@@ -39,6 +39,30 @@ function Document({
         <meta name="theme-color" content="#a855f7" />
         <title>{title}</title>
         <Links />
+        <meta property="og:url" content="https://toddgoates.com" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Todd Goates | Utah-Based, Full-Stack Developer"
+        />
+        <meta
+          property="og:description"
+          content="The portfolio website of Todd Goates, a Full-Stack Web Developer from Utah"
+        />
+        <meta property="og:image" content="images/meta-tag.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="toddgoates.com" />
+        <meta property="twitter:url" content="https://toddgoates.com" />
+        <meta
+          name="twitter:title"
+          content="Todd Goates | Utah-Based, Full-Stack Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="The portfolio website of Todd Goates, a Full-Stack Web Developer from Utah"
+        />
+        <meta name="twitter:image" content="images/meta-tag.png" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
