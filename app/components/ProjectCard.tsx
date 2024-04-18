@@ -12,7 +12,7 @@ export default function ProjectCard({
   reverse = false,
 }: ProjectCardProps) {
   return (
-    <div key={project.name}>
+    <div key={project.name} className="bg-white p-6 rounded shadow-lg">
       <div className="flex flex-col gap-8 md:flex-row">
         <a
           href={project.link}
